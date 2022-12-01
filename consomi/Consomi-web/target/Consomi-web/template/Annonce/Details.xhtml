@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core" 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"   xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"	template="/template/Shared/template.xhtml">
+	<ui:define name="content">
+	    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="pd-hero-text">
+
+                    <h2>WELCOME</h2>
+                   
+           
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+	
+
+    <h:graphicImage library="img" name="product-content-bg.jpg" />
+    
+
+   
+   
+
+
+<!-- Property Details Hero Section Begin -->
+<!-- Property Details Section Begin -->
+<section class="property-details-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="pd-details-text">
+               
+
+
+                    <div class="pd-desc">
+
+                        <h4>Description</h4>
+                        <p>
+                            <h:outputText value="#{AnnonceBean.description}" />
+                        </p>
+                    </div>
+                    <div class="pd-details-tab">
+                        
+                        <div class="tab-item-content">
+                            <div class="tab-content">
+                                <div class="tab-pane fade-in active" id="tab-1" role="tabpanel">
+                                    <div class="property-more-table">
+                                        <table class="left-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="pt-name">address</td>
+                                                    <td class="p-value"><h:outputText value="#{AnnonceBean.address}" /></td>
+                                                </tr>
+                                               
+                                                <tr>
+                                                    <td class="pt-name">surface</td>
+                                                    <td class="p-value"><h:outputText value="#{annonceBean.surface}" /> </td>
+                                                </tr>
+
+
+
+                                               
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+   
+   
+   
+   
+   
+   <div align="center">
+                                               
+   
+   		<h:form>
+										<h:commandButton action="indexx?faces-redirect=true"
+												value="Back to list" 
+												 class="btn btn-primary btn-sm"
+											/>
+												<h:commandButton action="#{Annoncebean.deleteRequest(AnnonceBean.AnnonceId)}"
+												value="Delete" 
+												 class="btn btn-primary btn-sm"
+												 
+											/>
+											<h:commandButton action="/Annonce/edit?faces-redirect=true"
+												value="Edit" 
+												 class="btn btn-primary btn-sm"
+												 
+											/>
+									
+								</h:form>
+   
+   
+   </div>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+	</ui:define> 
+</ui:composition> 
+ 

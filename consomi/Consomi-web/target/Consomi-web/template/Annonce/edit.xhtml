@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core" 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets" 		 xmlns:p="http://primefaces.org/ui"
+	   xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"	template="/template/Shared/template.xhtml">
+	<ui:define name="content">
+	    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="pd-hero-text">
+
+                    <h2>WELCOME</h2>
+                 
+            
+                </div>
+            </div>
+        </div>
+
+    </div>
+	
+
+ 
+    
+
+<h:form id="content" >
+   
+
+
+<h:outputText value="description " /> <h:inputText value="#{AnnonceBean.description}" class="form-control" />
+<h:outputText value="address" /> <h:inputText value="#{AnnonceBean.address}" class="form-control" />
+
+
+<h:outputText value="BUY/RENT"></h:outputText>
+<h:selectOneMenu value="#{AnnonceBean.typeA}">
+<f:selectItem itemLabel="" itemValue=""/>
+		<f:selectItems value="#{enumbean.typeAn}" />
+</h:selectOneMenu>
+
+
+				
+
+
+
+<h:outputText value="surface" /> <h:inputText value="#{AnnonceBean.surface}" class="form-control" />
+
+
+<h:outputText value="chambre" /> <h:inputTextarea  value="#{AnnonceBean.chambres}"  > </h:inputTextarea>
+<h:outputText value="price" /> <h:inputText value="#{AnnonceBean.price}" class="form-control" />
+
+
+	<h:commandButton action="indexx?faces-redirect=true"
+												value="Back to the list" 
+												 class="btn btn-primary btn-sm"
+											/>
+
+
+<h:commandButton id="btn" value="Create" action="#{AnnonceBean.editRequest()}" class="btn btn-primary btn-sm" /> <h:message for="btn"/>
+
+   <br></br><br></br><br></br><br></br>
+
+
+
+
+</h:form>
+
+   
+   
+   
+   
+   
+   
+	</ui:define> 
+</ui:composition> 
+ 

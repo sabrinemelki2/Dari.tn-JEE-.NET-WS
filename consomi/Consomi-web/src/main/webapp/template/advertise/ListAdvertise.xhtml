@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core" 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets" 		 xmlns:p="http://primefaces.org/ui"
+	   xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"	template="/template/Shared/template.xhtml">
+	<ui:define name="content">
+	    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="pd-hero-text">
+
+                    <h2>WELCOME</h2>
+                 
+            
+                </div>
+            </div>
+        </div>
+
+    </div>
+	
+<h:form id="form">
+<p:dataTable var="ad" value="#{AdvertiseBean.doGetAll()}"
+paginator="true" id="Advertise"
+        paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+        rowsPerPageTemplate="3,6,12"
+>
+
+ 	<p:column headerText="AdvertiseId">
+        <h:outputText value="#{ad.advertiseId}" />
+    </p:column>
+    
+    <p:column headerText="Name">
+        <h:outputText value="#{ad.name}" />
+    </p:column>
+ 
+    <p:column headerText="DateDeb">
+        <h:outputText value="#{ad.dateDeb}" />
+    </p:column>
+    
+    
+    
+    <p:column headerText="Description">
+        <h:outputText value="#{ad.description}" />
+    </p:column>
+    
+    
+    
+    
+    
+      
+    
+    
+    
+
+    <!--  
+           		  <p:commandButton icon="ui-icon-pencil" action="#{newPostBean.getNewPostToEdit(enf.id)}" title="Edit"></p:commandButton>  		 
+    -->
+        <p:column headerText="Action" >
+       		 <p:commandButton icon="ui-icon-cancel" action="#{AdvertiseBean.DeleteAdvertise(ad.advertiseId)}" title="Delete" value="Delete" ></p:commandButton>
+  <p:commandButton icon="ui-icon-cancel" action="#{AdvertiseBean.redirectUpdate(ad.advertiseId)}" title="Update" value="Update" ></p:commandButton>
+    
+    	</p:column>
+      
+ 
+</p:dataTable>
+
+
+
+</h:form>
+				
+</ui:define> 
+</ui:composition> 

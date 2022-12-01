@@ -1,0 +1,11 @@
+consomi\entities\Advertise.class
+consomi\interfaces\IAnnonceService.class
+consomi\interfaces\UserServiceRemote.class
+Enumerates\TypeAn.class
+consomi\services\UserService.class
+consomi\services\AdvertiseService.class
+consomi\services\AnnonceService.class
+consomi\services\main.class
+consomi\entities\Annonce.class
+consomi\entities\ApplicationUser.class
+consomi\interfaces\UserServiceLocal.class

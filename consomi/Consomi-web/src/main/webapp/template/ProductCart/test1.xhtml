@@ -1,0 +1,30 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/Shared/layout.xhtml">
+	
+
+<!-- 	<ui:define name="title">Login</ui:define> -->
+	
+	
+		<ui:define name="content">
+		<section class="pager-sec">
+			<div class="container">
+				<div class="pager-pag" style="padding-top: 165px">
+					<h3>test  1</h3>
+					<h4>-----------</h4>
+				</div>
+			</div>
+		</section>
+		<section class="pager-sec">
+			<div class="container">
+				<h:form>
+					<h:commandButton value="test" action="#{loginBean.test()}" />
+				</h:form>
+			</div>
+		</section>
+	</ui:define>
+	
+</ui:composition>
+

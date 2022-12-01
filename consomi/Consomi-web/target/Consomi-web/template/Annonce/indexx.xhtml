@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core" 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets" 		 xmlns:p="http://primefaces.org/ui"
+	   xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"	template="/template/Shared/template.xhtml">
+
+	<ui:define name="content">
+	
+	    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="pd-hero-text">
+
+                    
+                   
+            
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+ 
+    <br></br><br></br><br></br><center><h3>Real Estate Advertise</h3></center><br></br>
+    
+    
+    
+    
+    		
+<table class="footable table table-stripped toggle-arrow-tiny"
+						data-page-size="15">
+						<thead>
+							<tr>
+						
+							<th>Description</th>
+							<th>Type annonce</th>
+							<th>address</th>
+							<th>surface</th>		
+							<th>Rooms</th>
+							<th>prix</th>
+							<th>Delete</th>
+							<th>Update</th>
+							
+											
+							</tr>
+						</thead>
+						
+						<tbody>
+							<ui:repeat  id="list" var="annonce"  value="#{AnnonceBean.requestslist}">
+								<tr>
+								
+   								
+								
+								<td><h:outputText value="#{annonce.description}" /></td>
+							
+								<td>
+								<h:outputText value="Vente"  rendered="#{annonce.typeAn ==0}"/>
+								<h:outputText value="location"  rendered="#{annonce.typeAn ==1}"/>
+								</td>
+								
+								<td><h:outputText value="#{annonce.address}" /></td>
+							     
+							   	
+															
+								<td><h:outputText value="#{annonce.surface}" /></td>
+								<td><h:outputText value="#{annonce.chambres}" /></td>
+								<td><h:outputText value="#{annonce.price}" /></td>
+								<td><h:form>
+									<h:commandButton action="#{AnnonceBean.deleteRequest(annonce.annonceId)}"
+												value="Delete" 
+												 class="btn btn-primary btn-sm"
+											/>
+									</h:form></td>					
+									<td><h:form>
+									<h:commandButton action="Details?faces-redirect=true"
+												value="Details" 
+												 class="btn btn-primary btn-sm"
+												 
+											/>
+									</h:form></td>	
+										
+								</tr>
+							</ui:repeat>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="13">
+									<ul class="pagination float-right"></ul>
+								</td>
+							</tr>
+						</tfoot>
+					</table>
+
+
+
+   
+	</ui:define> 
+</ui:composition> 
+ 
